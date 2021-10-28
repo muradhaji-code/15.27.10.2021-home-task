@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 
 namespace _15._27._10._2021_home_task
 {
@@ -25,12 +26,14 @@ namespace _15._27._10._2021_home_task
             #endregion
 
             #region Task 9
-            Console.Write("Enter number: ");
-            int n = int.Parse(Console.ReadLine());
-            Pattern(n);
+            //Console.Write("Enter number: ");
+            //int n = int.Parse(Console.ReadLine());
+            //Pattern(n);
             #endregion
 
             #region Task 10
+            string text = Console.ReadLine();
+            Console.WriteLine($"Space count: {CountSpaces(text)}");
             #endregion
         }
 
@@ -84,6 +87,11 @@ namespace _15._27._10._2021_home_task
                 Console.WriteLine();
                 i--;
             }
+        }
+
+        static int CountSpaces(string text)
+        {
+            return Regex.Matches(text, @"\s").Count;
         }
     }
 }
